@@ -8,27 +8,27 @@
 
 import UIKit
 
-class ESTabBarController: UITabBarController {
+public class ESTabBarController: UITabBarController {
     
-    var isTranslucent : Bool = false {
+   public var isTranslucent : Bool = false {
         didSet {
             self.tabBar.isTranslucent = isTranslucent
         }
     }
     
-    var barTintColor : UIColor = .white {
+   public var barTintColor : UIColor = .white {
         didSet {
             self.tabBar.barTintColor = barTintColor
         }
     }
     
-    var tintColor : UIColor = .white {
+   public var tintColor : UIColor = .white {
         didSet {
             self.tabBar.tintColor = tintColor
         }
     }
     
-    var hideLine : Bool = false {
+   public var hideLine : Bool = false {
         didSet {
             if hideLine {
                 self.tabBar.backgroundImage = UIImage()
@@ -38,25 +38,25 @@ class ESTabBarController: UITabBarController {
     }
     
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
         //Do whatever you want here
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func setViewController(_ viewController:UIViewController?, title:String?, normalImage:UIImage?, selectedImage:UIImage?) {
+    public func setViewController(_ viewController:UIViewController?, title:String?, normalImage:UIImage?, selectedImage:UIImage?) {
         
         guard let viewController = viewController else {
             return;
