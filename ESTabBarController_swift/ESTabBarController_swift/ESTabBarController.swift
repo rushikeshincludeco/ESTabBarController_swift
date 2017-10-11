@@ -10,30 +10,36 @@ import UIKit
 
 public class ESTabBarController: UITabBarController {
     
-   public var isTranslucent : Bool = false {
+   public var es_isTranslucent : Bool = false {
         didSet {
-            self.tabBar.isTranslucent = isTranslucent
+            self.tabBar.isTranslucent = es_isTranslucent
         }
     }
     
-   public var barTintColor : UIColor = .white {
+   public var es_barTintColor : UIColor = .white {
         didSet {
-            self.tabBar.barTintColor = barTintColor
+            self.tabBar.barTintColor = es_barTintColor
         }
     }
     
-   public var tintColor : UIColor = .white {
+   public var es_tintColor : UIColor = .white {
         didSet {
-            self.tabBar.tintColor = tintColor
+            self.tabBar.tintColor = es_tintColor
         }
     }
     
-   public var hideLine : Bool = false {
+   public var es_hideLine : Bool = false {
         didSet {
-            if hideLine {
+            if es_hideLine {
                 self.tabBar.backgroundImage = UIImage()
                 self.tabBar.shadowImage = UIImage()
             }
+        }
+    }
+    
+    public var es_barBackgroundImage : UIImage? {
+        didSet {
+            self.tabBar.backgroundImage = es_barBackgroundImage
         }
     }
     
@@ -56,7 +62,7 @@ public class ESTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-    public func setViewController(_ viewController:UIViewController?, title:String?, normalImage:UIImage?, selectedImage:UIImage?) {
+    public func es_setViewController(_ viewController:UIViewController?, title:String?, normalImage:UIImage?, selectedImage:UIImage?) {
         
         guard let viewController = viewController else {
             return;
