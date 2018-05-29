@@ -8,27 +8,27 @@
 
 import UIKit
 
-public class ESTabBarController: UITabBarController {
+open class ESTabBarController: UITabBarController {
     
-   public var es_isTranslucent : Bool = false {
+   open var es_isTranslucent : Bool = false {
         didSet {
             self.tabBar.isTranslucent = es_isTranslucent
         }
     }
     
-   public var es_barTintColor : UIColor = .white {
+   open var es_barTintColor : UIColor = .white {
         didSet {
             self.tabBar.barTintColor = es_barTintColor
         }
     }
     
-   public var es_tintColor : UIColor = .white {
+   open var es_tintColor : UIColor = .white {
         didSet {
             self.tabBar.tintColor = es_tintColor
         }
     }
     
-   public var es_hideLine : Bool = false {
+   open var es_hideLine : Bool = false {
         didSet {
             if es_hideLine {
                 self.tabBar.backgroundImage = UIImage()
@@ -37,14 +37,14 @@ public class ESTabBarController: UITabBarController {
         }
     }
     
-    public var es_barBackgroundImage : UIImage? {
+    open var es_barBackgroundImage : UIImage? {
         didSet {
             self.tabBar.backgroundImage = es_barBackgroundImage
         }
     }
     
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
     }
 
@@ -57,12 +57,12 @@ public class ESTabBarController: UITabBarController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    public func es_setViewController(_ viewController:UIViewController?, title:String?, normalImage:UIImage?, selectedImage:UIImage?) {
+    open func es_setViewController(_ viewController:UIViewController?, title:String?, normalImage:UIImage?, selectedImage:UIImage?) {
         
         guard let viewController = viewController else {
             return;
